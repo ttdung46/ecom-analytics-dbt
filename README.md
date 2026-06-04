@@ -67,8 +67,8 @@ data.parquet                  # ~67M event rows (zstd compressed)
 
 **1. Clone và cài dependencies**
 ```bash
-git clone <repo-url>
-cd project_de
+git clone https://github.com/ttdung46/ecom-analytics-dbt
+cd ecom-analytics-dbt
 uv sync
 ```
 
@@ -112,7 +112,7 @@ uv run dbt docs generate && uv run dbt docs serve
 ## Project Structure
 
 ```
-project_de/
+ecom-analytics-dbt/
 ├── models/
 │   ├── staging/        # Raw source → cast, rename, filter
 │   ├── transform/      # Dimensions + fact table
