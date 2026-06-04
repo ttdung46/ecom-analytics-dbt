@@ -1,0 +1,12 @@
+[project]
+name = "ecom-analytics-dbt"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dbt-duckdb>=1.10.1",
+    "duckdb>=1.5.3",
+    "gdown>=6.1.0",
+    "pyarrow>=24.0.0",
+]

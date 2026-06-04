@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: main
+    meta:
+      external_location: true
+    tables:
+      - name: events
+        description: "Raw event log từ data.parquet"
+        meta:
+          external_location: "'/Users/nguyenphuonganh/ecom-analytics-dbt/data.parquet'"
+
+      - name: purchase_behavior
+        description: "Purchase behavior với cohort metrics"
+        meta:
+          external_location: "read_csv('/Users/nguyenphuonganh/ecom-analytics-dbt/Customer Tracking Log Purchase Behavior.csv', auto_detect=true)"

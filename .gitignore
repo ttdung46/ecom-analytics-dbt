@@ -1,0 +1,19 @@
+
+target/
+dbt_packages/
+logs/
+
+# DuckDB database files
+*.duckdb
+*.duckdb.wal
+
+# Raw data files (too large for git)
+*.parquet
+*.csv
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.DS_Store

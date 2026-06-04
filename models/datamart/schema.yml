@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dm_product_performance
+    description: "Hiệu suất từng sản phẩm: views, purchases, conversion rate, revenue"
+
+  - name: dm_category_analysis
+    description: "Phân tích theo ngành hàng: revenue, conversion rate, avg price"
+
+  - name: dm_user_cohort
+    description: "Cohort retention theo tuần: % user quay lại mua sau N tuần"
+
+  - name: dm_customer_rfm
+    description: "Phân khúc khách hàng theo RFM: Champions, Loyal, At Risk, Lost"
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dm_customer_ltv
+    description: "Customer Lifetime Value: doanh thu, tần suất mua, LTV ước tính"
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dm_behavior_by_hour
+    description: "Hành vi user theo khung giờ và ngày trong tuần"

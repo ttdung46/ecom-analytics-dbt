@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "Thông tin user: first/last seen, số sessions, số purchases"
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_products
+    description: "Thông tin sản phẩm: brand, category, price range"
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_categories
+    description: "Phân loại ngành hàng: main_category và sub_category"
+    columns:
+      - name: category_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_date
+    description: "Date dimension: year, month, week, is_weekend"
+    columns:
+      - name: date_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_events
+    description: "Toàn bộ events đã dedup: view, cart, purchase"
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: event_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['view', 'cart', 'purchase', 'remove_from_cart']
+      - name: user_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
